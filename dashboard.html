@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Portal Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="./src/css/dashboard.css">
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+    
+</head>
+<body>
+    <!-- Mobile Navbar -->
+    <nav class="navbar">
+        <div class="navbar__left">
+            <button class="btn btn--icon" id="mobileMenuToggle" aria-label="Toggle menu">
+                <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                </svg>
+            </button>
+            <div class="navbar__logo">AD</div>
+            <h2 class="navbar__title">SSO DASHBOARD</h2>
+        </div>
+        <button class="btn btn--icon" id="mobileThemeToggle" aria-label="Toggle theme">
+            <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/>
+            </svg>
+        </button>
+    </nav>
+
+    <!-- Layout Container -->
+    <div class="layout">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar__header">
+                <div class="sidebar__logo">AD</div>
+                <h2 class="sidebar__title">SSO DASHBOARD</h2>
+            </div>
+
+            <nav>
+                <ul class="nav-menu">
+                    <li class="nav-menu__item" data-target="main_content_section">
+                        <a href="./dashboard_main.php" class="nav-menu__link active">
+                            <svg class="nav-menu__icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
+                            </svg>
+                            <span class="nav-menu__text ">Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="nav-menu__item" data-target="application_management_section">
+                        <a href="./dashboard_application_management.php" class="nav-menu__link">
+                            <svg class="nav-menu__icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                            </svg>
+                            <span class="nav-menu__text">Applications Management</span>
+                        </a>
+                    </li>
+                    <li class="nav-menu__item" data-target="exam_permit_generation_section">
+                        <a href="./dashboard_permit_generation.php" class="nav-menu__link">
+                            <svg class="nav-menu__icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+                            </svg>
+                            <span class="nav-menu__text">Exam Permits Generator</span>
+                        </a>
+                    </li>
+                    <li class="nav-menu__item" data-target="scheduling_section">
+                        <a href="#" class="nav-menu__link">
+                            <svg class="nav-menu__icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                            </svg>
+                            <span class="nav-menu__text">Scheduling</span>
+                        </a>
+                    </li>
+                    <li class="nav-menu__item">
+                        <a href="#" class="nav-menu__link">
+                            <svg class="nav-menu__icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"/>
+                            </svg>
+                            <span class="nav-menu__text">Students</span>
+                        </a>
+                    </li>
+                    <li class="nav-menu__item" data-target="settings_section">
+                        <a href="./dashboard_settings.php" class="nav-menu__link">
+                            <svg class="nav-menu__icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                            </svg>
+                            <span class="nav-menu__text">Settings</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+
+            
+                <!-- Header -->
+                <header class="header">
+                    <div class="header__left">
+                        <h1>Dashboard Overview</h1>
+                        <p class="header__subtitle">Welcome back! Here's what's happening with your Admissions.</p>
+                    </div>
+                    <div class="header__actions">
+                        <button class="btn btn--icon" id="sidebarToggle" aria-label="Toggle sidebar">
+                            <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                            </svg>
+                        </button>
+                        
+                        <button class="btn btn--primary">
+                            <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/>
+                            </svg>
+                            New Application
+                        </button>
+                    </div>
+                </header>
+
+            <section class="section active" id="main_content_section">
+                <!-- KPI Cards -->
+                <div class="kpi-grid">
+                    <div class="kpi-card">
+                        <div class="kpi-card__header">
+                            <div>
+                                <div class="kpi-card__label">Applications</div>
+                            </div>
+                            <div class="kpi-card__icon kpi-card__icon--blue">
+                                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" style="width: 28px; height: 28px;">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="kpi-card__value">1,248</div>
+                        <div class="kpi-card__trend kpi-card__trend--up">
+                            <svg style="width: 16px; height: 16px;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"/>
+                            </svg>
+                            +12.5% from last month
+                        </div>
+                    </div>
+
+                    <div class="kpi-card">
+                        <div class="kpi-card__header">
+                            <div>
+                                <div class="kpi-card__label">Approved</div>
+                            </div>
+                            <div class="kpi-card__icon kpi-card__icon--green">
+                                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" style="width: 28px; height: 28px;">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="kpi-card__value">892</div>
+                        <div class="kpi-card__trend kpi-card__trend--up">
+                            <svg style="width: 16px; height: 16px;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"/>
+                            </svg>
+                            +8.3% from last month
+                        </div>
+                    </div>
+
+                    <div class="kpi-card">
+                        <div class="kpi-card__header">
+                            <div>
+                                <div class="kpi-card__label">Pending</div>
+                            </div>
+                            <div class="kpi-card__icon kpi-card__icon--yellow">
+                                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" style="width: 28px; height: 28px;">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="kpi-card__value">264</div>
+                        <div class="kpi-card__trend kpi-card__trend--up">
+                            <svg style="width: 16px; height: 16px;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"/>
+                            </svg>
+                            +5.2% from last month
+                        </div>
+                    </div>
+
+                    <div class="kpi-card">
+                        <div class="kpi-card__header">
+                            <div>
+                                <div class="kpi-card__label">Rejected</div>
+                            </div>
+                            <div class="kpi-card__icon kpi-card__icon--red">
+                                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" style="width: 28px; height: 28px;">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="kpi-card__value">92</div>
+                        <div class="kpi-card__trend kpi-card__trend--down">
+                            <svg style="width: 16px; height: 16px;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+                            </svg>
+                            -3.1% from last month
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chart Container -->
+                <div class="chart-container">
+                    <div class="chart-container__header">
+                        <h2 class="chart-container__title">Application Trends</h2>
+                        <p class="chart-container__subtitle">Monthly application statistics for the past 6 months</p>
+                    </div>
+                    <div class="chart-container__canvas">
+                        <canvas id="applicationChart"></canvas>
+                    </div>
+                </div>
+                
+
+            
+                    <!-- Recent Activity Table -->
+                <div class="table-container">
+                    <div class="table-container__header">
+                        <h2 class="table-container__title">Recent Activity</h2>
+                    </div>
+                   <table class="table">
+                        <thead>
+                            <tr>
+                            <th><input type="checkbox" id="selectAllRecent" class="table-checkbox"></th>
+                            <th>Application ID</th>
+                            <th class="sortable" data-column="name">Student Name
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="sort-icon">
+                                    <path d="m3 16 4 4 4-4"/>
+                                    <path d="M7 20V4"/>
+                                    <path d="M20 8h-5"/>
+                                    <path d="M15 10V6.5a2.5 2.5 0 0 1 5 0V10"/>
+                                    <path d="M15 14h5l-5 6h5"/>
+                                </svg>
+                            </th>
+                            <th>Course</th>
+                            <th>Date</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                            </tr>
+                        </thead>
+                            <tbody>
+                                <?php
+                                include 'config.php';
+                                $sql = "SELECT * FROM recent_activity_table";
+                                $result = $conn->query($sql);
+                                
+                                    if ($result->num_rows > 0) {
+                                        while($row = $result->fetch_assoc()) {
+                                            echo "<tr>
+                                                    <td><input type='checkbox' class='table-checkbox row-checkbox' data-id='4'></td>
+                                                    <td data-cell='Application ID'>#4</td>
+                                                    <td data-cell='Student Name'>Gabriela Silang</td>
+                                                    <td data-cell='Email'>g.silang@email.com</td>
+                                                    <td data-cell='Course'>BA in Communication</td>
+                                                    <td data-cell='Date'>Sep 25, 2025</td>
+                                                    <td data-cell='Status'>
+                                                        <span class='badge badge--rejected'>Rejected</span>
+                                                    </td>
+                                                    <td class='table-controls'>
+                                                        <button class='table__btn table__btn--view>View</button>
+                                                        <button class='table__btn table__btn--edit'>Edit</button>
+                                                        <button class='table__btn table__btn--delete'>Delete</button>
+                                                    </td>
+                                                </tr>";
+                                        }
+                                    } else {
+                                        echo "<tr><td colspan='8'>No recent activity found</td></tr>";
+                                    }
+
+                                 $conn->close();
+                                ?>                          
+                            </tbody>
+                    </table>
+                    
+                    <!-- Pagination -->
+                    <div class="pagination">
+                        <div class="pagination__left">
+                            <span class="pagination__label">Rows per page:</span>
+                            <select class="pagination__select">
+                                <option value="10">10</option>
+                                <option value="25">25</option>
+                                <option value="50">50</option>
+                                <option value="100">100</option>
+                            </select>
+                        </div>
+                        <div class="pagination__center">
+                            <span class="pagination__info">Showing 1-10 of 50 • Page 1/5</span>
+                        </div>
+                        <div class="pagination__right">
+                            <button class="pagination__bttns pagination__button--disabled" disabled>Prev</button>
+                            <button class="pagination__bttns">Next</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="./src/Javascript/dahsboard.js"></script>
+</body>
+</html>

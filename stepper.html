@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Progress Stepper Component</title>
+    <link rel="stylesheet" href="src/css/global_styling.css">
+    <link rel="stylesheet" href="src/css/stepper.css">
+</head>
+<body>
+    <div class="main_container">
+        <!-- Navigation -->
+        <nav class="nav">
+            <div class="logo">
+                <div class="plp_logo">
+                    <img src="src/images/Inang_pamantasan_logo.png" alt="PLP Logo">
+                </div>
+            </div>
+            <div class="menu_list">
+                <a href="index.html">Home</a>
+                <a href="forms.html" class="active">Forms</a>
+                <a href="About.html">About</a>
+                <a href="contactus.html">Contact</a>
+            </div>
+            <div class="left_area">
+                <button>Login</button>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="stepper_demo_container">
+            <div class="stepper_demo_content">
+                <h1>Progress Stepper Component</h1>
+                <p>Horizontal progress stepper with multiple steps and responsive design.</p>
+                
+                <!-- Stepper Component -->
+                <div class="stepper_container">
+                    <!-- Step 1: Personal Info -->
+                    <div class="stepper_step active">
+                        <div class="step_circle">
+                            <span class="step_number">1</span>
+                        </div>
+                        <div class="step_connector"></div>
+                        <div class="step_label">Personal Info</div>
+                    </div>
+
+                    <!-- Step 2: Verification -->
+                    <div class="stepper_step">
+                        <div class="step_circle">
+                            <span class="step_number">2</span>
+                        </div>
+                        <div class="step_connector"></div>
+                        <div class="step_label">Verification</div>
+                    </div>
+
+                    <!-- Step 3: Documents -->
+                    <div class="stepper_step">
+                        <div class="step_circle">
+                            <span class="step_number">3</span>
+                        </div>
+                        <div class="step_connector"></div>
+                        <div class="step_label">Documents</div>
+                    </div>
+
+                    <!-- Step 4: Review -->
+                    <div class="stepper_step">
+                        <div class="step_circle">
+                            <span class="step_number">4</span>
+                        </div>
+                        <div class="step_connector"></div>
+                        <div class="step_label">Review</div>
+                    </div>
+
+                    <!-- Step 5: Complete -->
+                    <div class="stepper_step">
+                        <div class="step_circle">
+                            <span class="step_number">5</span>
+                        </div>
+                        <div class="step_label">Complete</div>
+                    </div>
+                </div>
+
+                <!-- Demo Controls -->
+                <div class="stepper_controls">
+                    <h3>Demo Controls</h3>
+                    <p>Click the buttons below to see different stepper states:</p>
+                    <div class="control_buttons">
+                        <button class="demo_btn" onclick="setActiveStep(1)">Step 1</button>
+                        <button class="demo_btn" onclick="setActiveStep(2)">Step 2</button>
+                        <button class="demo_btn" onclick="setActiveStep(3)">Step 3</button>
+                        <button class="demo_btn" onclick="setActiveStep(4)">Step 4</button>
+                        <button class="demo_btn" onclick="setActiveStep(5)">Step 5</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        // Simple JavaScript for demo functionality
+        function setActiveStep(stepNumber) {
+            // Remove active class from all steps
+            const allSteps = document.querySelectorAll('.stepper_step');
+            allSteps.forEach(step => step.classList.remove('active'));
+            
+            // Add active class to current and previous steps
+            for (let i = 1; i <= stepNumber; i++) {
+                const step = document.querySelector(`.stepper_step:nth-child(${i})`);
+                if (step) {
+                    step.classList.add('active');
+                }
+            }
+        }
+    </script>
+</body>
+</html>
+

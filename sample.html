@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- ================= GOOGLE FONTS ================= -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- ================= CUSTOM CSS ================= -->
+    <link rel="stylesheet" href="./src/css/formsV2.css" />
+    <link rel="stylesheet" href="./src/css/global_styling.css" />
+
+    <title>Student Service Support</title>
+  </head>
+
+  <body>
+    <!-- ================= MAIN CONTAINER ================= -->
+    <div class="maincontainer">
+      
+      <!-- ================= FORM SECTION ================= -->
+       <main class="container_for_stepper_and_input">
+
+        <div class="stepper_container">
+
+          <div class="container_for_steps">
+
+            <div class="first_container">
+              <div class="circle_container">
+                <div class="circle_oustide_border">
+                 <div class="circle_inside">1</div>
+
+                </div>
+              </div>
+              <div class="description">
+                <div class="steps_description">
+                  <p>Step 1</p>
+                  <p class="active_Step_description">Personal Details</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="line_shape_conatainer_steps">
+                <div class="lineshape"></div>
+            </div>
+
+
+            <div class="first_container">
+              <div class="circle_container">
+                <div class="circle_oustide_border">
+                 <div class="circle_inside">1</div>
+
+                </div>
+              </div>
+              <div class="description">
+                <div class="steps_description">
+                  <p>Step 1</p>
+                  <p class="active_Step_description">Personal Details</p>
+                </div>
+              </div>
+            </div>
+
+             <div class="line_shape_conatainer_steps">
+                <div class="lineshape"></div>
+            </div>
+
+
+            <div class="first_container">
+              <div class="circle_container">
+                <div class="circle_oustide_border">
+                 <div class="circle_inside">1</div>
+
+                </div>
+              </div>
+              <div class="description">
+                <div class="steps_description">
+                  <p>Step 1</p>
+                  <p class="active_Step_description">Personal Details</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+
+
+        </div>
+
+        <div class="input_forms_container">
+
+           <div class="forms_container" id="forms_container_id">
+            <h3>Profile Information</h3>
+
+            <!-- Personal Information Form -->
+            <div class="upper_forms_container">
+              <div class="input_group">
+                <input
+                  type="text"
+                  class="form_input"
+                  placeholder=" "
+                  id="firstName"
+                />
+                <label for="firstName" class="form_label">First Name</label>
+              </div>
+
+              <div class="input_group">
+                <input
+                  type="text"
+                  class="form_input"
+                  placeholder=" "
+                  id="middleName"
+                />
+                <label for="middleName" class="form_label">Middle Name</label>
+              </div>
+
+              <div class="input_group">
+                <input
+                  type="text"
+                  class="form_input"
+                  placeholder=" "
+                  id="lastName"
+                />
+                <label for="lastName" class="form_label">Last Name</label>
+              </div>
+
+              <div class="input_group">
+                <input
+                  type="text"
+                  class="form_input"
+                  placeholder=" "
+                  id="suffix"
+                />
+                <label for="suffix" class="form_label">Suffix</label>
+              </div>
+
+              <!-- Dropdown -->
+              <div class="input_group dropdown">
+                <select id="gender" class="select_input" required>
+                  <option value="" disabled selected hidden></option>
+                  <option value="male">Male</option>
+                  <option value="female">Female</option>
+                </select>
+                <label for="gender" class="select_label">Gender</label>
+              </div>
+
+              <div class="input_group">
+                <input
+                  type="date"
+                  class="form_input"
+                  id="birthday"
+                  required
+                />
+                <label for="birthday" class="form_label">Birthday</label>
+              </div>
+            </div>
+
+            <div class="lower_forms_container">
+              <h3>Address Information</h3>
+
+              <!-- Top Section -->
+              <div class="top_section">
+                <div class="input_group">
+                  <input
+                    type="text"
+                    class="form_input"
+                    placeholder=" "
+                    id="houseNumber"
+                  />
+                  <label for="houseNumber" class="form_label"
+                    >House/Unit/Building Number</label
+                  >
+                </div>
+
+                <div class="input_group">
+                  <input
+                    type="text"
+                    class="form_input"
+                    placeholder=" "
+                    id="streetName"
+                  />
+                  <label for="streetName" class="form_label">Street Name</label>
+                </div>
+
+                <div class="input_group">
+                  <input
+                    type="text"
+                    class="form_input"
+                    placeholder=" "
+                    id="subdivision"
+                  />
+                  <label for="subdivision" class="form_label"
+                    >Subdivision/Village</label
+                  >
+                </div>
+              </div>
+
+              <!-- Lower Section -->
+              <div class="lower_section">
+                <div class="input_group dropdown">
+                  <select id="city" class="select_input" required>
+                    <option value="" disabled selected hidden></option>
+                    <option value="pasig">Pasig City</option>
+                    <option value="mandaluyong">Mandaluyong</option>
+                  </select>
+                  <label for="city" class="select_label">City/Municipality</label>
+                </div>
+
+                <div class="input_group dropdown">
+                  <select id="barangay" class="select_input" required>
+                    <option value="" disabled selected hidden></option>
+                    <option value="kapitolyo">Kapitolyo</option>
+                    <option value="san_jose">San Jose</option>
+                  </select>
+                  <label for="barangay" class="select_label">Barangay</label>
+                </div>
+              </div>
+            </div>
+
+            <div class="action_button_containers">
+                  <div class="Submit_button_container">
+                    <button id="first_button_submit" onclick="submitBtn_step1()">
+                      Submit
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right-icon lucide-arrow-right"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                    </button>
+                  </div>
+            </div>
+          </div>
+        </div>
+
+
+
+
+
+       </main>
+     
+      <!-- ================= END FORM SECTION ================= -->
+
+    </div>
+    <!-- ================= END MAIN CONTAINER ================= -->
+
+    <!-- ================= FOOTER IMAGE ================= -->
+    <div class="footer_image">
+      <img src="./src/images/footer_image.svg" alt="footer image" />
+    </div>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="site_footer" role="contentinfo">
+      <div class="footer_inner">
+        <div class="footer_intro">
+          <p>
+            We keep things simple, approachable, and are committed to helping
+            you start and stay on track with confidence.
+          </p>
+          <div class="footer_logos" aria-hidden="true">
+            <img
+              src="./src/images/Student_Servoice-removebg-preview.png"
+              alt="Graduate"
+            />
+            <img
+              src="./src/images/Inang_pamantasan_logo.png"
+              alt="Pasig City"
+            />
+          </div>
+        </div>
+
+        <div class="footer_cols" aria-label="Footer links">
+          <div class="footer_col">
+            <h4>Navigation Pages</h4>
+            <ul>
+              <li><a href="#">Home</a></li>
+              <li><a href="#">Forms</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#contact">Contact Us</a></li>
+            </ul>
+          </div>
+
+          <div class="footer_col">
+            <h4>Legal</h4>
+            <ul>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Terms and Conditions</a></li>
+            </ul>
+          </div>
+
+          <div class="footer_col">
+            <h4>About PLP</h4>
+            <ul>
+              <li><a href="#">Mission and Vision</a></li>
+              <li><a href="#">News and Events</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <hr class="footer_divider" />
+
+      <div class="footer_bottom">
+        <div class="footer_copy">
+          <p>
+            Copyright © 2025 Pamantasan ng Lungsod ng Pasig. All Rights
+            Reserved
+          </p>
+          <p>Maintained by Student Success Office</p>
+          <p>Version 1.0</p>
+          <p>Developed By ABO | ADOR | DATUS</p>
+        </div>
+
+        <div class="footer_socials">
+          <a href="#" aria-label="Facebook" class="social_btn">f</a>
+          <a href="#" aria-label="LinkedIn" class="social_btn">in</a>
+          <a href="#" aria-label="Twitter" class="social_btn">tw</a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- ================= JAVASCRIPT ================= -->
+    <script src="./src/Javascript/Navbar.js" defer></script>
+    <script src="./src/Javascript/button_forms_navigator.js"></script>
+  </body>
+</html>
